@@ -23,7 +23,7 @@ h2{
 .form__group {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 10px;
+    margin-bottom: 30px;
     height: 50px;
 }
 
@@ -46,6 +46,7 @@ h2{
     width: 70%;
     text-align: left;
     padding: 10px 0;
+    color:#8C8070;
 }
 
 .form__group--name{
@@ -60,8 +61,9 @@ h2{
     padding: 5px 5%;
     outline: none;
     border: none;
+    margin-bottom: 5px;
     background-color: #f4f4f4;
-    color:#BEB1A7
+    color:#8C8070;
 }
 
 .form__group--gender{
@@ -113,7 +115,8 @@ input[type="radio"]:checked::before {
     background-color: #f4f4f4;
     height: 30px;
     padding: 5px 5%;
-    color: #BEB1A7
+    color: #8C8070;
+    margin-bottom: 5px;
 }
 
 .form__group--tel{
@@ -128,7 +131,30 @@ input[type="radio"]:checked::before {
     background-color: #f4f4f4;
     height: 30px;
     text-align: center;
-    color: #BEB1A7
+    color: #8C8070;
+    width: 25%;
+    margin-bottom: 5px;
+}
+
+.form__input--tel-hyphen{
+    color: #8C8070;
+    width: 5%;
+    text-align: center;
+}
+
+.form__error-tel{
+    display: flex;
+    color: red;
+    font-size: 12px;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.form__error-tel1,
+.form__error-tel2,
+.form__error-tel3{
+    width: 25%;
+    background-color: #EDEDEB;
 }
 
 .form__group--address,
@@ -144,7 +170,8 @@ input[type="radio"]:checked::before {
     background-color: #f4f4f4;
     height: 30px;
     padding: 5px 5%;
-    color: #BEB1A7
+    color: #8C8070;
+    margin-bottom: 5px;
 }
 
 .form__group--category{
@@ -171,8 +198,9 @@ input[type="radio"]:checked::before {
     border: none;
     background-color: #f4f4f4;
     padding: 5px 10%;
-    color:#BEB1A7;
+    color:#8C8070;
     height: 35px;
+    margin-bottom: 5px;
 }
 
 .select-wrapper::after {
@@ -190,7 +218,7 @@ input[type="radio"]:checked::before {
         pointer-events: none;
 }
 
-.form__group--detail{
+.form__group--detail-content{
         display: flex;
         justify-content: space-between;
         margin-bottom: 10px;
@@ -203,8 +231,9 @@ input[type="radio"]:checked::before {
     outline: none;
     border: none;
     background-color: #f4f4f4;
-    color: #BEB1A7;
-    padding: 10px 5%;
+    color: #8C8070;
+    padding: 5px 5%;
+    appearance: none;
 }
 
 .form__button{
@@ -221,4 +250,29 @@ input[type="radio"]:checked::before {
     background: #8C8070;
     color: #fff;
     cursor: pointer;
+}
+
+.form__error{
+    color:red;
+    background-color: #EDEDEB;
+    outline: none;
+    border: none;
+    font-size: 12px;
+    padding: 0 5px;
+    text-align: left;
+}
+
+.form__error-name{
+    display: flex;
+    justify-content: space-between;
+    font-size: 15px;
+    width: 100%;
+}
+
+.form__error-first_name,.form__error-last_name{
+    color: red;
+    background-color: #EDEDEB;
+    width: 45%;
+    padding: 0 5px;
+    font-size: 12px;
 }
