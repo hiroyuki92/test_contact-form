@@ -18,3 +18,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get('/', [ContactController::class, 'index']);
+Route::get('/confirm', [ContactController::class, 'confirm']);

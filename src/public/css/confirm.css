@@ -1,0 +1,78 @@
+.confirm__content{
+    margin: 0 auto;
+    max-width: 1230px;
+}
+
+.confirm__heading{
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+h2 {
+    color: #8C8070;
+    font-size: 30px;
+    font-family: 'Georgia', 'Times New Roman', serif;
+}
+
+.form{
+    margin: 0 auto;
+    width: 70%;
+}
+
+.confirm-table{
+    border: 1px solid #D3D2D1;
+}
+
+.confirm-table__inner{
+    width: 100%;
+}
+
+.confirm-table__row{
+    border-bottom: 1px solid #D3D2D1;
+}
+
+.confirm-table__row-last{
+    height: 100px;
+}
+
+.confirm-table__header{
+    width: 35%;
+    text-align: left;
+    padding: 20px 30px;
+    color: white;
+    background-color: rgba(106, 82, 4, 0.42);
+    font-family: 'Georgia', 'Times New Roman', serif;
+}
+
+.confirm-table__text input,
+.confirm-table__text-p{
+    padding: 10px 30px;
+    outline: none;
+    border: none;
+}
+
+.form__button {
+    margin: 30px 0;
+    text-align: center;
+}
+
+.form__button-send__submit{
+    padding: 5px;
+    width: 10%;
+    height: 40px;
+    border: none;
+    background: #8C8070;
+    color: #fff;
+    cursor: pointer;
+}
+
+.form__button-fix__submit{
+    padding: 5px;
+    width: 10%;
+    height: 40px;
+    border: none;
+    color: #8C8070;
+    cursor: pointer;
+    background-color: #fff;
+    text-decoration: underline;
+}
