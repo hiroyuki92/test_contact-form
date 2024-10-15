@@ -40,15 +40,36 @@ h2 {
     text-align: left;
     padding: 20px 30px;
     color: white;
+    font-size: 15px;
     background-color: rgba(106, 82, 4, 0.42);
+    font-family: 'Georgia', 'Times New Roman', serif;
+}
+
+.confirm-table__text-name{
+    display: flex;
+    margin-top: 10px;
+    padding: 0 30px;
+}
+
+.confirm-table__text-name input{
+    width: 15%;
+    padding: 10px 0px;
+    outline: none;
+    border: none;
+    color: #8C8070;
+    font-size: 15px;
     font-family: 'Georgia', 'Times New Roman', serif;
 }
 
 .confirm-table__text input,
 .confirm-table__text-p{
+    width: 100%;
     padding: 10px 30px;
     outline: none;
     border: none;
+    color: #8C8070;
+    font-size: 15px;
+    font-family: 'Georgia', 'Times New Roman', serif;
 }
 
 .form__button {
