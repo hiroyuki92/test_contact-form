@@ -9,7 +9,7 @@
     <div class="contact-form__heading">
         <h2>Contact</h2>
     </div>
-    <form class="form" action="/confirm" method="post">
+    <form class="form" action="{{ route('confirm') }}" method="post">
         @csrf
         <div class="form__group">
             <div class="form__group-title">
@@ -133,7 +133,7 @@
                 <span class="form__label--required">※</span>
             </div>
             <div class="select-wrapper">
-                <select class="form__group--category" name="category">
+                <select class="form__group--category" name="category_id">
                     <option value="" selected="selected">選択してください</option>
                     @foreach ($categories as $category)
                     <option value="{{ $category['id'] }}">{{ $category['content'] }}</option>

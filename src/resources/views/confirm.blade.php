@@ -9,7 +9,7 @@
         <div class="confirm__heading">
             <h2>Confirm</h2>
         </div>
-        <form class="form" action="/" method="post">
+        <form class="form" action="/contacts" method="post">
             @csrf
             <div class="confirm-table">
                 <table class="confirm-table__inner">
@@ -53,7 +53,7 @@
                     <tr class="confirm-table__row">
                         <th class="confirm-table__header">お問い合わせの種類</th>
                         <td class="confirm-table__text">
-                            <p class="confirm-table__text-p">1</p>
+                            <p class="confirm-table__text-p">{{ $contacts['category_content'] }}</p>
                         </td>
                     </tr>
                     <tr class="confirm-table__row-last">
@@ -66,7 +66,7 @@
             </div>
             <div class="form__button">
                 <button class="form__button-send__submit" type="submit">送信</button>
-                <button class="form__button-fix__submit" type="submit">修正</button>
+                <button type="button" class="form__button-fix__submit" onclick="window.location='{{ route('index') }}'">修正</button>
             </div>
         </form>
     </div>
