@@ -19,4 +19,7 @@ Route::get('/', function () {
 });
 Route::get('/', [ContactController::class, 'index'])->name('index');
 Route::post('/confirm', [ContactController::class, 'confirm'])->name('confirm');
-Route::post('/contacts', [ContactController::class, 'store']);
+Route::post('/store', [ContactController::class, 'store']);
+Route::get('/thanks', function () {
+    return view('thanks');
+})->name('thanks');

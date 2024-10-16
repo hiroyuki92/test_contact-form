@@ -18,18 +18,20 @@ class ContactController extends Controller
 
     public function confirm(ContactRequest $request)
     {
-        $contacts = $request->only(['first_name', 'last_name', 'gender', 'email', 'tel', 'address', 'building', 'category_id', 'detail']);
-        $tel = $request->input('tel1') . $request->input('tel2') . $request->input('tel3');
-        $contacts['tel'] = $tel;
+        $contacts = $request->validated();
+        $contacts['tel'] = $request->input('tel1') . $request->input('tel2') . $request->input('tel3');
         $category = Category::find($contacts['category_id']);
         $contacts['category_content'] = $category->content;
-        return view('confirm', compact('contacts'));
+        return view('confirm', compact('contacts'))->withInput($request->all());
     }
 
     public function store(ContactRequest $request)
     {
-        $contacts = $request->only(['first_name', 'last_name', 'gender', 'email', 'tel', 'address', 'building','category_id', 'detail']);
+        $contacts = $request->validated();
+        $contacts['tel'] = $request->input('tel1') . $request->input('tel2') . $request->input('tel3');
+        $category = Category::find($contacts['category_id']);
+        $contacts['category_content'] = $category->content;
         Contact::create($contacts);
-        return  redirect()->route('index')->with('message', 'お問い合わせが正常に保存されました');
+        return redirect()->route('thanks');
     }
 }

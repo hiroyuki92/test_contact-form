@@ -136,7 +136,7 @@
                 <select class="form__group--category" name="category_id">
                     <option value="" selected="selected">選択してください</option>
                     @foreach ($categories as $category)
-                    <option value="{{ $category['id'] }}">{{ $category['content'] }}</option>
+                    <option value="{{$category['id']}}" }}> {{ $category['content'] }}</option>
                     @endforeach
                 </select>
                 <div class="form__error">
