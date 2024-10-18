@@ -25,7 +25,8 @@ Route::get('/thanks', function () {
     return view('thanks');
 })->name('thanks');
 
-Route::get('/admin', [AuthController::class, 'index']);
+Route::get('/admin', [AuthController::class, 'index'])->name('admin');
+Route::get('/admin/search', [AuthController::class, 'search']);
 /* Route::get('/admin', function () {
     return view('admin.dashboard');
 })->name('admin.dashboard')->middleware('auth'); */

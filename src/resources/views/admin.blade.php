@@ -4,6 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Contact form</title>
+        @livewireStyles
         <link rel="stylesheet" href="{{ asset('css/sanitize.css') }}" />
         <link rel="stylesheet" href="{{ asset('css/admin.css') }}">
     </head>
@@ -30,24 +31,24 @@
                 <div class="admin-form__heading">
                     <h2 class="logo">Admin</h2>
                 </div>
-                <form class="search-form" action="#" method="GET">
+                <form class="search-form" action="/admin/search" method="GET">
                 @csrf
-                    <input type="text" class="search-input" placeholder="名前やメールアドレスを入力してください">
-                    <select class="search-select">
+                    <input type="text" class="search-input" name="keyword" value="{{ old('keyword') }}"  placeholder="名前やメールアドレスを入力してください">
+                    <select class="search-select"  name="gender">
                         <option value="" selected="selected">性別</option>
                         <option value="1">男性</option>
                         <option value="2">女性</option>
                         <option value="3">その他</option>
                     </select>
-                    <select class="search-select">
-                        <option value="selected">お問い合わせの種類</option>
+                    <select class="search-select"  name="category_id">
+                        <option value="">お問い合わせの種類</option>
                         @foreach ($categories as $category)
                         <option value="{{$category['id']}}"> {{ $category['content'] }}</option>
                         @endforeach
                     </select>
-                    <input type="date" class="search-date">
+                    <input type="date"  name="date" class="search-date">
                     <button type="submit" class="search-button">検索</button>
-                    <button type="reset" class="reset-button">リセット</button>
+                    <a href="{{ route('admin') }}" class="reset-button">リセット</a>
                 </form>
                 <div class="admin-form__sub-title">
                     <div class="export-button">
@@ -81,12 +82,14 @@
                             </td>
                             <td>{{ $contact->email }}</td>
                             <td>{{ $contact->category->content }}</td>
-                            <td><button class="detail-button">詳細</button></td>
+                            <td><button wire:click="$emit('showContact', {{ $contact->id }})">詳細</button></td>
                         </tr>
                         @endforeach
                     </tbody>
                 </table>
+                @livewire('contact-detail')
             </div>
         </main>
+        @livewireScripts
     </body>
 </html>
