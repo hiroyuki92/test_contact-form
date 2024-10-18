@@ -79,6 +79,7 @@
     color: #7c6e63;
     background-color: #f9f9f9;
     font-size: 15px;
+    margin: 5px;
 }
 .search-select,
 .search-date {
@@ -87,6 +88,7 @@
     color:#7c6e63;
     background-color: #f9f9f9;
     font-size: 1rem;
+    margin: 5px;
 }
 
 .search-button {
@@ -96,6 +98,7 @@
     color: white;
     cursor: pointer;
     width: 80px;
+    margin: 5px;
 }
 
 .reset-button {
@@ -105,20 +108,53 @@
     color: white;
     cursor: pointer;
     width: 80px;
+    margin: 5px;
 }
 
-.export {
+.admin-form__sub-title {
     width: 100%;
+    display: flex;
+    text-align: center;
+    justify-content: space-between;
+    padding: 10px 0;
 }
-.export-button {
-    margin-bottom: 10px;
+
+
+.export-button__submit {
+    margin: 10px 0;
     padding: 10px;
     border: none;
-    border-radius: 5px;
     background-color: #d6cfc7;
     color: #7c6e63;
     cursor: pointer;
     justify-content: left;
+}
+
+.pagination-wrapper {
+    display: inline-block;
+    justify-content: center;
+    position: relative;
+}
+
+.pagination {
+    display: flex;
+}
+
+.page-item .page-link {
+    color: #8C7B75;
+    border: 1px solid #d3d3d3;
+    appearance: none;
+    font-size: 20px;
+    padding: 10px;
+    text-decoration: none;
+}
+
+.pagination .page-item.active .page-link {
+    background-color: #8C7B75;
+    border-color: #8C7B75;
+    color: white;
+    appearance: none;
+    padding: 10px;
 }
 
 .admin-table {
@@ -127,11 +163,16 @@
     margin-bottom: 20px;
 }
 
+.admin-table__title{
+    width: 100%;
+}
+
 .admin-table th {
     background-color: #7c6e63;
     color: white;
     padding: 15px;
     text-align: left;
+    justify-content: space-between;
 }
 
 .admin-table td {
@@ -148,3 +189,4 @@
     cursor: pointer;
     transition: background-color 0.3s;
 }
+

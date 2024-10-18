@@ -5,12 +5,16 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests\RegisterRequest;
 use App\Http\Requests\LoginRequest;
+use App\Models\Contact;
+use App\Models\Category;
 
 class AuthController extends Controller
 {
     public function index()
 {
-    return view('admin');
+    $categories = Category::all();
+    $contacts = Contact::with('category')->paginate(7);
+    return view('admin', compact('categories', 'contacts'));
 }
 
     public function register(RegisterRequest $request)

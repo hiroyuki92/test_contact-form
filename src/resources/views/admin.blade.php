@@ -34,23 +34,32 @@
                 @csrf
                     <input type="text" class="search-input" placeholder="名前やメールアドレスを入力してください">
                     <select class="search-select">
-                        <option value="">性別</option>
-                        <option value="male">男性</option>
-                        <option value="female">女性</option>
+                        <option value="" selected="selected">性別</option>
+                        <option value="1">男性</option>
+                        <option value="2">女性</option>
+                        <option value="3">その他</option>
                     </select>
                     <select class="search-select">
-                        <option value="">お問い合わせの種類</option>
-                        <option value="交換">商品の交換について</option>
-                        <option value="返品">返品について</option>
+                        <option value="selected">お問い合わせの種類</option>
+                        @foreach ($categories as $category)
+                        <option value="{{$category['id']}}"> {{ $category['content'] }}</option>
+                        @endforeach
                     </select>
                     <input type="date" class="search-date">
                     <button type="submit" class="search-button">検索</button>
                     <button type="reset" class="reset-button">リセット</button>
                 </form>
-                <div class="export"><button class="export-button">エクスポート</button></div>
+                <div class="admin-form__sub-title">
+                    <div class="export-button">
+                        <button class="export-button__submit">エクスポート</button>
+                    </div>
+                    <div class="pagination-wrapper">
+                    {{ $contacts->links('pagination::bootstrap-4') }}
+                    </div>
+                </div>
                 <table class="admin-table">
                     <thead>
-                        <tr>
+                        <tr class=admin-table__title>
                             <th>お名前</th>
                             <th>性別</th>
                             <th>メールアドレス</th>
@@ -59,27 +68,22 @@
                         </tr>
                     </thead>
                     <tbody>
+                        @foreach($contacts as $contact)
                         <tr>
-                            <td>山田 太郎</td>
-                            <td>男性</td>
-                            <td>test@example.com</td>
-                            <td>商品の交換について</td>
+                            <td>{{ $contact->last_name }} {{ $contact->first_name }}</td>
+                            <td>@if($contact->gender == 1)
+                            男性
+                            @elseif($contact->gender == 2)
+                            女性
+                            @else
+                            その他
+                            @endif
+                            </td>
+                            <td>{{ $contact->email }}</td>
+                            <td>{{ $contact->category->content }}</td>
                             <td><button class="detail-button">詳細</button></td>
                         </tr>
-                        <tr>
-                            <td>山田 太郎</td>
-                            <td>男性</td>
-                            <td>test@example.com</td>
-                            <td>商品の交換について</td>
-                            <td><button class="detail-button">詳細</button></td>
-                        </tr>
-                        <tr>
-                            <td>山田 太郎</td>
-                            <td>男性</td>
-                            <td>test@example.com</td>
-                            <td>商品の交換について</td>
-                            <td><button class="detail-button">詳細</button></td>
-                        </tr>
+                        @endforeach
                     </tbody>
                 </table>
             </div>

@@ -34,4 +34,5 @@ class ContactController extends Controller
         Contact::create($contacts);
         return redirect()->route('thanks');
     }
+
 }
