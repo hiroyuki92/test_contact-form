@@ -18,17 +18,17 @@
             </div>
             <div class="form__group-content">
                 <div class="form__group--name">
-                    <input class="form__group--name-input" type="text" name="first_name" placeholder="例:山田"  value="{{ old('first_name') }}" />
-                    <input class="form__group--name-input" type="text" name="last_name" placeholder="例:太郎"  value="{{ old('last_name') }}" />
+                    <input class="form__group--name-input" type="text" name="last_name" placeholder="例:山田"  value="{{ old('last_name') }}" />
+                    <input class="form__group--name-input" type="text" name="first_name" placeholder="例:太郎"  value="{{ old('first_name') }}" />
                 </div>
                 <div class="form__error-name">
-                    <div class="form__error-first_name">
-                        @error('first_name')
+                    <div class="form__error-last_name">
+                        @error('last_name')
                             {{ $message }}
                         @enderror
                     </div>
-                    <div class="form__error-last_name">
-                        @error('last_name')
+                    <div class="form__error-first_name">
+                        @error('first_name')
                             {{ $message }}
                         @enderror
                     </div>
