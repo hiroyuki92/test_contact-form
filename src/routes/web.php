@@ -22,7 +22,7 @@ Route::get('/thanks', function () {return view('thanks');})->name('thanks');
 
 Route::middleware('auth')->group(function () {
     Route::get('/admin', [AuthController::class, 'index'])->name('admin');
-Route::get('/admin/search', [AuthController::class, 'search']);
+    Route::get('/admin/search', [AuthController::class, 'search']);
 });
 Route::post('/register', [AuthController::class, 'register'])->name('register');
 Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');

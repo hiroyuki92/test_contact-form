@@ -4,9 +4,10 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Contact form</title>
-        @livewireStyles
         <link rel="stylesheet" href="{{ asset('css/sanitize.css') }}" />
         <link rel="stylesheet" href="{{ asset('css/admin.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/modal.css') }}">
+        @livewireStyles
     </head>
     <body>
         <header class="header">
@@ -82,7 +83,7 @@
                             </td>
                             <td>{{ $contact->email }}</td>
                             <td>{{ $contact->category->content }}</td>
-                            <td><button wire:click="$emit('showContact', {{ $contact->id }})">詳細</button></td>
+                            <td><button class="detail-button" wire:click="$emit('showContact', {{ $contact->id }})">詳細</button></td>
                         </tr>
                         @endforeach
                     </tbody>

@@ -158,6 +158,11 @@
     padding: 10px;
 }
 
+.livewire-conteiner{
+    width: 100%;
+    background-color: red;
+}
+
 .admin-table {
     width: 100%;
     border-collapse: collapse;

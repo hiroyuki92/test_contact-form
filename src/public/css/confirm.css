@@ -38,7 +38,7 @@ h2 {
 .confirm-table__header{
     width: 35%;
     text-align: left;
-    padding: 20px 30px;
+    padding: 10px 30px;
     color: white;
     font-size: 15px;
     background-color: rgba(106, 82, 4, 0.42);
@@ -53,7 +53,7 @@ h2 {
 
 .confirm-table__text-name input{
     width: 15%;
-    padding: 10px 0px;
+    padding: 5px 0px;
     outline: none;
     border: none;
     color: #8C8070;
@@ -64,7 +64,7 @@ h2 {
 .confirm-table__text input,
 .confirm-table__text-p{
     width: 100%;
-    padding: 10px 30px;
+    padding: 5px 30px;
     outline: none;
     border: none;
     color: #8C8070;
@@ -95,7 +95,7 @@ h2 {
     background-color: #fff;
     text-decoration: underline;
     position: fixed;
-        top:92%;
+        top:81%;
         left: 55%;
 }
 

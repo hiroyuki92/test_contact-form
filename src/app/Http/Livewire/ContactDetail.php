@@ -13,16 +13,8 @@ class ContactDetail extends Component
 
     public function showContact($contactId)
     {
-       \Log::info("受け取ったID: " . $contactId);  // ログでIDを確認
-
-    $this->contact = Contact::find($contactId);
-
-    if ($this->contact) {
-        \Log::info("データ取得成功: " . $this->contact->first_name);
-        $this->isOpen = true;
-    } else {
-        \Log::warning("IDが見つかりませんでした: " . $contactId);
-    }
+    $this->contact = Contact::findOrFail($contactId);
+    $this->isOpen = true;
     }
 
     public function closeModal()
