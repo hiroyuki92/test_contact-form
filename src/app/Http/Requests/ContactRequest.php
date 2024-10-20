@@ -28,12 +28,12 @@ class ContactRequest extends FormRequest
             'first_name' => 'required',
             'gender' => 'required',
             'email' => 'required|email',
-            'tel1' => 'required|numeric|digits_between:1,5',
-            'tel2' => 'required|numeric|digits_between:1,5',
-            'tel3' => 'required|numeric|digits_between:1,5',
+            'tel1' => 'required|nullable|numeric|digits_between:1,5',
+            'tel2' => 'required|nullable|numeric|digits_between:1,5',
+            'tel3' => 'required|nullable|numeric|digits_between:1,5',
             'address' => 'required',
             'building' => 'nullable|string|max:255',
-            'category_id' => 'required',
+            'category_id' => 'required|exists:categories,id',
             'detail' => 'required|max:120',
         ];
     }

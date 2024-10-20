@@ -20,11 +20,10 @@ Route::post('/confirm', [ContactController::class, 'confirm'])->name('confirm');
 Route::post('/store', [ContactController::class, 'store'])->name('store');
 Route::get('/thanks', function () {return view('thanks');})->name('thanks');
 
-Route::get('/admin', [AuthController::class, 'index'])->name('admin');
+Route::middleware('auth')->group(function () {
+    Route::get('/admin', [AuthController::class, 'index'])->name('admin');
 Route::get('/admin/search', [AuthController::class, 'search']);
-/* Route::get('/admin', function () {
-    return view('admin.dashboard');
-})->name('admin.dashboard')->middleware('auth'); */
+});
 Route::post('/register', [AuthController::class, 'register'])->name('register');
 Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [AuthController::class, 'login']);

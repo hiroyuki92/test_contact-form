@@ -89,11 +89,13 @@ h2 {
 
 .form__button-fix__submit{
     padding: 5px;
-    width: 10%;
-    height: 40px;
     border: none;
     color: #8C8070;
     cursor: pointer;
     background-color: #fff;
     text-decoration: underline;
+    position: fixed;
+        top:92%;
+        left: 55%;
 }
+

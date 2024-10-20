@@ -9,7 +9,7 @@ class Contact extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['category_id', 'last_name', 'first_name', 'gender', 'email', 'tel', 'address', 'building', 'detail'];
+    protected $fillable = ['category_id', 'last_name', 'first_name', 'gender', 'email', 'tel','tel1','tel2','tel3', 'address', 'building', 'detail'];
 
     public function category()
     {
