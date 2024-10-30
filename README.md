@@ -22,7 +22,41 @@
 .MySQL8.0  
 
 ### ER図
-![](./test_contact-form.drawio.png)
+```mermaid
+erDiagram
+    USERS {
+        int id PK
+        string name
+        string email
+        string password
+        datetime created_at
+        datetime updated_at
+    }
+
+    CONTACTS {
+        int id PK
+        int category_id FK "UK"
+        string first_name
+        string last_name
+        string gender
+        string email
+        string tell
+        string address
+        string building
+        string detail
+        datetime created_at
+        datetime updated_at
+    }
+
+    CATEGORIES {
+        int id PK
+        string content
+        datetime created_at
+        datetime updated_at
+    }
+
+    CONTACTS }o--|| CATEGORIES: " "
+```
 
 ### URL
 .環境開発：http://localhost/  
